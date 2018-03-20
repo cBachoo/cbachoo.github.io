@@ -1,0 +1,1 @@
+var values = {"values":["/kuno_suba","@runkunochan","/run_kuno","/kunochan","Join my discord server!","/kunochan","/kuno-chan"]};
