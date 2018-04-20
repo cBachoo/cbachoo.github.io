@@ -31,7 +31,7 @@ function setup() {
       let inputs = [r / 255, g / 255, b / 222]; //normalize the numbers
       brain.train(inputs, targets);
     }
-
+    //console.log("done training!")
     pickColor();
 }
 
