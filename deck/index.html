@@ -5,36 +5,60 @@
 	<h2>Deck Counter by Bachoo#0001</h2>
 
 	<form id="frm1">
-		
-	</form>
-	
-	<!-- the real form xd -->
-	<textarea rows="25" cols="50"name=fname form="frm1"></textarea>
 
-	<p>Click on the Submit button to add up your deck! (Note: Do extra deck and main deck separately)</p>
+	</form>
+
+	<!-- the real form xd -->
+	<textarea rows="25" cols="50" name=fname form="frm1"></textarea>
+
+	<p>Click on the Submit button to add up your deck! (Note: Make sure text is "MainDeck" and "ExtraDeck" exactly if you want it to split correctly)</p>
 	<button onclick="calcDeck()">Submit</button>
 
 	<p id="ech"></p>
+	<p id="blech"></p>
 
 	<script>
 		function calcDeck() {
 			var x = document.getElementById("frm1");
-			var text = "";
+			var str = "";
 			var i;
 			for (i = 0; i < x.length; i++) {
-				text += x.elements[i].value + "<br>";
-			}
-			//extract numbers
-			var num = text.replace(/\D/g, '');
-			var spaced = num.split('').join(' ');
-			var maa = spaced.split(' ');
-			var sum = 0;
-			for (var x = 0; x < maa.length; x++) {
-				sum += parseInt(maa[x]);
+				str += x.elements[i].value + "<br>";
 			}
 
+			//extract maindeck and extradeck
+			var midf = str.indexOf('MainDeck');
+			var mlidf = str.lastIndexOf('ExtraDeck');
+			var maindeck = str.slice(midf, mlidf);
+			//console.log(maindeck);
+			var eidf = str.indexOf('ExtraDeck');
+			var extradeck = str.slice(eidf, str.length);
+			//console.log(extradeck);
+
+			//main deck number extraction
+			var mnum = maindeck.replace(/\D/g, '');
+			var mspaced = mnum.split('').join(' ');
+			var mextract = mspaced.split(' ');
+			//extra deck number extraction
+			var exnum = extradeck.replace(/\D/g, '');
+			var exspaced = exnum.split('').join(' ');
+			var exectract = exspaced.split(' ');
+
+			//add things up now
+			var msum = 0;
+			var exsum = 0;
+
+			for (var x = 0; x < mextract.length; x++) {
+				msum += parseInt(mextract[x]);
+			}
+			for (var x = 0; x < exectract.length; x++) {
+				exsum += parseInt(exectract[x]);
+			}
+			
+			//msum = maindeck sum // exsum = extradeck sum 
 			//print that shit out my nigga
-			document.getElementById("ech").innerHTML = "<h3>Deck has " + sum + " Cards</h3>";
+			document.getElementById("ech").innerHTML = "<h3>Main Deck has " + msum + " Cards</h3>";
+			document.getElementById("blech").innerHTML = "<h3>Extra Deck has " + exsum + " Cards</h3>"
 		}
 	</script>
 
