@@ -16,6 +16,7 @@
 
 	<p id="ech"></p>
 	<p id="blech"></p>
+	<p id="echblech"></p>
 
 	<script>
 		function calcDeck() {
@@ -55,10 +56,12 @@
 				exsum += parseInt(exectract[x]);
 			}
 			
+			var total = msum + exsum;
 			//msum = maindeck sum // exsum = extradeck sum 
 			//print that shit out my nigga
 			document.getElementById("ech").innerHTML = "<h3>Main Deck has " + msum + " Cards</h3>";
 			document.getElementById("blech").innerHTML = "<h3>Extra Deck has " + exsum + " Cards</h3>"
+			document.getElementById("echblech").innerHTML = "<h3>Total cards = " + total + " Cards</h3>"
 		}
 	</script>
 
