@@ -1,0 +1,43 @@
+<html>
+
+<body>
+	<title>Deck Counter by Bachoo#0001</title>
+	<h2>Deck Counter by Bachoo#0001</h2>
+
+	<form id="frm1">
+		
+	</form>
+	
+	<!-- the real form xd -->
+	<textarea rows="25" cols="50"name=fname form="frm1"></textarea>
+
+	<p>Click on the Submit button to add up your deck! (Note: No Extra Deck Monsters)</p>
+	<button onclick="calcDeck()">Submit</button>
+
+	<p id="ech"></p>
+
+	<script>
+		function calcDeck() {
+			var x = document.getElementById("frm1");
+			var text = "";
+			var i;
+			for (i = 0; i < x.length; i++) {
+				text += x.elements[i].value + "<br>";
+			}
+			//extract numbers
+			var num = text.replace(/\D/g, '');
+			var spaced = num.split('').join(' ');
+			var maa = spaced.split(' ');
+			var sum = 0;
+			for (var x = 0; x < maa.length; x++) {
+				sum += parseInt(maa[x]);
+			}
+
+			//print that shit out my nigga
+			document.getElementById("ech").innerHTML = "<h3>Deck has " + sum + " Cards</h3>";
+		}
+	</script>
+
+</body>
+
+</html>
