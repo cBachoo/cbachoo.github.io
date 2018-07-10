@@ -1,0 +1,51 @@
+<html>
+
+<body>
+    <title>0w0 Whats this?</title>
+    <h2>0w0ify by Bachoo#0001</h2>
+
+    <form id="frm1">
+
+    </form>
+
+    <!-- the real form -->
+    <textarea rows="25" cols="50" name=fname form="frm1"></textarea>
+    <p></p>
+    <button onclick="owoify()">0w0ify me</button>
+
+    <p id="ech"></p>
+
+    <script>
+        function owoify() {
+            var faces = ["(・`ω´・)", ";;w;;", "owo", "UwU", ">w<", "^w^"]; //important
+
+            //grab text from box
+            var x = document.getElementById("frm1");
+            var str = "";
+            for (var i = 0; i < x.length; i++) {
+                str += x.elements[i].value + "<br>";
+            }
+            
+            var result = handleText(str);
+
+            function handleText(text) {
+                var v = text;
+
+                v = v.replace(/(?:r|l)/g, "w");
+                v = v.replace(/(?:R|L)/g, "W");
+                v = v.replace(/n([aeiou])/g, 'ny$1');
+                v = v.replace(/N([aeiou])/g, 'Ny$1');
+                v = v.replace(/N([AEIOU])/g, 'Ny$1');
+                v = v.replace(/ove/g, "uv");
+                v = v.replace(/\!+/g, " " + faces[Math.floor(Math.random() * faces.length)] + " ");
+
+                return v;
+            }
+
+            //send the things
+            document.getElementById("ech").innerHTML = "<h3>" + result + "</h3>"
+        }
+    </script>
+</body>
+
+</html>
