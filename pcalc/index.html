@@ -1,0 +1,38 @@
+<html>
+
+<body>
+    <title>Pre-Order Calculator</title>
+    <h2>Pre-Order Calculator by Bachoo#0001</h2>
+    
+
+    <form id="frm1">
+
+    </form>
+
+    <!-- the real form -->
+    <textarea rows="15" cols="25" name=fname form="frm1"></textarea>
+    <p></p>
+    <button onclick="calculate()">Calculate</button>
+
+    <p id="ech"></p>
+
+    <script>
+        function calculate() {
+            //grab text from box
+            var x = document.getElementById("frm1");
+            var str = "";
+            for (var i = 0; i < x.length; i++) {
+                str += x.elements[i].value + "<br>";
+            }
+            
+            var num = parseInt(str.replace(/[^0-9]/g, ''));
+            var result = (num * .10) + num
+
+
+            //send the things
+            document.getElementById("ech").innerHTML = "<h3>Your preorder should be: " + result + " Silver.</h3>"
+        }
+    </script>
+</body>
+
+</html>
