@@ -1,0 +1,20 @@
+body {
+    background-image: url("bg.jpeg");
+}
+
+h1 {
+    color: honeydew;
+    font-family: "Quicksand";
+    font-size: 100px;
+
+    /* placing stuff in the center */
+    height: 200px;
+    width: 4000px;
+    
+
+    position: fixed;
+    top: 45%;
+    left: 43%;
+    margin-top: -100px;
+    margin-left: -200px;
+}
