@@ -1,5 +1,5 @@
 var x = setInterval(function () {
-    var countDate = new Date("Dec 7, 2018 12:00:00").getTime();
+    var countDate = new Date("Dec 7, 2018").getTime();
     var now = new Date().getTime(); //current time
 
     var distance = countDate - now;
