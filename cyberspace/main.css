@@ -1,0 +1,24 @@
+body{
+    display: flex;
+    align-items: center;
+    background-color: #111;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-family: Helvetica Neue, Helvetica;
+    color: white;
+    text-align: center;
+  }
+  a{
+    color: #7FDBFF;
+    text-decoration: none;
+  }
+  a:hover{
+    text-decoration: underline;
+  }
+  .glitchousel img, .glitchousel canvas{
+    flex: 0 1 100%;
+  }
+  .glitchousel img{
+    visibility: invisible;
+  }
+  
